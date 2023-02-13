@@ -9,8 +9,7 @@ try {
     $row = $stmt->fetch();
 
 foreach($row as $data){
-echo "PaymentGateWayID".$data->PaymentGateWayID;
-echo "PaymentGateWayType".$data->PaymentGateWayType;
+echo $data;
 }
     // echo"$row[0] $row[1] $row[2] $row[3} $row[4] $row[5] $row[6]";
     $conn = NULL;
