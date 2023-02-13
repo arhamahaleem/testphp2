@@ -6,8 +6,12 @@ try {
     $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     $sql =("SELECT * from PaymentGateWay where PaymentGateWayID=2");
     $stmt = $conn->query("$sql");
-    return $row = $stmt->fetch();
-    echo"$row[0] $row[1] $row[2] $row[3] $row[4] $row[5] $row[6]";
+    $row = $stmt->fetch();
+
+foreach($row as $data){
+echo $data;
+}
+    // echo"$row[0] $row[1] $row[2] $row[3} $row[4] $row[5] $row[6]";
     $conn = NULL;
 }
 catch (PDOException $e) {
