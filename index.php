@@ -3,16 +3,7 @@
 try {
     $conn = new PDO("sqlsrv:server = tcp:testdbsqlserver2.database.windows.net,1433; Database = floteq_dev", "serveradmin2", "zxcvbnm1!");
     $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-     
-
-$sqlquery = "INSERT INTO table Persons
-    ('1', 'haleem','arhama','G8/2', 'Islamabad')"
- 
-if ($conn->query($sql) === TRUE) {
-    echo "record inserted successfully";
-} else {
-    echo "Error: " . $sql . "<br>" . $conn->error;
-}
+    print("connected");
 }
 catch (PDOException $e) {
     print("Error connecting to SQL Server.");
