@@ -9,7 +9,7 @@ try {
     $row = $stmt->fetch();
 
     foreach($row as $index=> $data){
-       echo $data[$index]."<br>";
+       echo $data[$index];
     }
     // echo"$row[0] $row[1] $row[2] $row[3] $row[4] $row[5] $row[6]";
     // $conn = NULL;
