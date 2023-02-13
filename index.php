@@ -4,14 +4,10 @@
 try {
     $conn = new PDO("sqlsrv:server = tcp:testdbsqlserver2.database.windows.net,1433; Database = floteq_dev", "serveradmin2", "zxcvbnm1!");
     $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-    $sql =("SELECT * from PaymentGateWay");
-    $stmt = $conn->query($sql);
+    $sql =("SELECT * from PaymentGateWay where PaymentGateWayID=2");
+    $stmt = $conn->query("$sql");
     $row = $stmt->fetch();
-
-foreach($row as $data){
-echo $data;
-}
-    // echo"$row[0] $row[1] $row[2] $row[3} $row[4] $row[5] $row[6]";
+    echo"$row[0] $row[1] $row[2] $row[3] $row[4] $row[5] $row[6]";
     $conn = NULL;
 }
 catch (PDOException $e) {
@@ -24,4 +20,5 @@ $connectionInfo = array("UID" => "serveradmin2", "pwd" => "zxcvbnm1!", "Database
 $serverName = "tcp:testdbsqlserver2.database.windows.net,1433";
 $conn = sqlsrv_connect($serverName, $connectionInfo);
 ?>
+
 
